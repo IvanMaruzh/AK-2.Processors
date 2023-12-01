@@ -1,5 +1,5 @@
-## Computer architecture 2. Processors. Laboratory work № 3.
-Laboratory work № 3.
+## Computer architecture 2. Processors. Laboratory work № 4.
+Laboratory work № 4.
 
 Group: IO-13
 
@@ -28,7 +28,9 @@ make clean
 make
 ```
 ```
-cp hello.ko $HOME/repos/busybox/_install/
+cp hello1.ko $HOME/repos/busybox/_install/
+cp hello2.ko $HOME/repos/busybox/_install/
+cp -r inc/ $HOME/repos/busybox/_install/
 ```
 # Rebuild
 
@@ -50,12 +52,28 @@ qemu-system-arm -kernel _install/boot/zImage -initrd rootfs.cpio.gz -machine vir
 # Kernel commands
 
 ```
-insmod hello.ko
+modinfo hello1.ko
 ```
 ```
-modinfo hello.ko
+modinfo hello2.ko
 ```
 ```
-rmmod hello
+insmod hello1.ko
+```
+```
+insmod hello2.ko
+```
+```
+rmmod hello2.ko
+```
+```
+rmmod hello1.ko
 ```
 
+# Debug commands
+```
+cat /sys/module/hello2/parameters/val
+```
+```
+cat /proc/kallsyms | grep "print_hello"
+```
