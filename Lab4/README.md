@@ -29,7 +29,11 @@ make
 ```
 ```
 cp hello1.ko $HOME/repos/busybox/_install/
+```
+```
 cp hello2.ko $HOME/repos/busybox/_install/
+```
+```
 cp -r inc/ $HOME/repos/busybox/_install/
 ```
 # Rebuild

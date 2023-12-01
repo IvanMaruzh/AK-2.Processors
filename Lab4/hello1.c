@@ -4,7 +4,6 @@
 #include <linux/moduleparam.h>
 #include <linux/errno.h>
 #include <linux/slab.h>
-#include <linux/ktime.h>
 #include "hello1.h"
 
 MODULE_AUTHOR("Ivan Maruzhenko <maruzhenko.ivan@lll.kpi.ua>");
